@@ -49,6 +49,7 @@ function init(data) {
         text: bubLabels,
         type: "scatter",
         mode: "markers",
+        opacity: 1,
         marker: {size: bubValues, color: bubIds, colorscale: "Earth"}
     };
 
@@ -59,12 +60,13 @@ function init(data) {
 
     //create trace for gauge
     let gauge1 = {
-        domain: {x: [0,1], y:[0,1]},
         value: gaugeValue,
+        domain: {x: [0,1], y:[0,1]},
         title: {text: "Belly Button Wash Frequency\nScrubs per Week"},
         type: "indicator",
         mode: "gauge",
         gauge: {
+            shape: "angular",
             axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
             bar: { color: "darkblue" },
             steps: [
@@ -73,7 +75,37 @@ function init(data) {
                 {range: [6,9], color: "green"}]}
     };
 
-    let gaugeLayout = { width: 600, height: 600, margin: { t: 0, b: 0 } };
+    let theta = 180-gaugeValue*20
+    let r = .75
+    let xPt = r * Math.cos(theta*.0174533)
+    let yPt = r * Math.sin(theta*.0174533)
+
+    let gaugeLayout = {
+        width: 600, 
+        height: 450,
+        margin: { t: 115, b: 115 },
+        xaxis: {range: [-1, 1]},
+        yaxis: {range: [0, 1]},
+        showlegend: false,
+        annotations: [
+            {
+              ax: 0.0,
+              ay: 0.0,
+              axref: "x",
+              ayref: "y",
+              x: xPt,
+              y: yPt,
+              xref: "x",
+              yref: "y",
+              showarrow: true,
+              arrowhead: 3,
+              arrowside: "end",
+              arrowsize: 1.25,
+              arrowwidth: 8,
+              arrowcolor: "darkblue"
+            }
+          ]
+    };
 
     //prepare data for demographic panel
     let initDemographicKeys = Object.keys(data.metadata[0]);
@@ -88,7 +120,7 @@ function init(data) {
     let bubbleArray = [bubble1];
     let gaugeArray = [gauge1];
 
-    //have plotly plot the bar graph
+    //have plotly plot the bar, bubble, and gauge graph
     Plotly.newPlot("bar", barArray, barLayout);
     Plotly.newPlot("bubble", bubbleArray, bubbleLayout);
     Plotly.newPlot("gauge", gaugeArray, gaugeLayout);
@@ -137,6 +169,7 @@ function updatePlotly(selection, data) {
         text: selectbubLabels,
         type: "scatter",
         mode: "markers",
+        opacity: 1,
         marker: {size: selectbubValues, color: selectbubIds, colorscale: "Earth"}
     };
 
@@ -147,12 +180,13 @@ function updatePlotly(selection, data) {
 
     //create trace for gauge
     let gauge1 = {
-        domain: {x: [0,1], y:[0,1]},
         value: gaugeValue,
-        title: {text: "Belly Button Wash Frequency<br>Scrubs per Week"},
+        domain: {x: [0,1], y:[0,1]},
+        title: {text: "Belly Button Wash Frequency\nScrubs per Week"},
         type: "indicator",
         mode: "gauge",
         gauge: {
+            shape: "angular",
             axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
             bar: { color: "darkblue" },
             steps: [
@@ -161,7 +195,37 @@ function updatePlotly(selection, data) {
                 {range: [6,9], color: "green"}]}
     };
 
-    let gaugeLayout = { width: 600, height: 600, margin: { t: 0, b: 0 } };
+    let theta = 180-gaugeValue*20
+    let r = .75
+    let xPt = r * Math.cos(theta*.0174533)
+    let yPt = r * Math.sin(theta*.0174533)
+
+    let gaugeLayout = {
+        width: 600, 
+        height: 450,
+        margin: { t: 115, b: 115 },
+        xaxis: {range: [-1, 1]},
+        yaxis: {range: [0, 1]},
+        showlegend: false,
+        annotations: [
+            {
+              ax: 0.0,
+              ay: 0.0,
+              axref: "x",
+              ayref: "y",
+              x: xPt,
+              y: yPt,
+              xref: "x",
+              yref: "y",
+              showarrow: true,
+              arrowhead: 3,
+              arrowside: "end",
+              arrowsize: 1.25,
+              arrowwidth: 8,
+              arrowcolor: "darkblue"
+            }
+          ]
+    };
 
     //prepare data for demographic panel
     let selectDemographicKeys = Object.keys(selectMetaData[0]);
@@ -186,14 +250,11 @@ function updatePlotly(selection, data) {
 
 // create a filter function for subject id number by using dropdown option to select test subject id number, onchange property = function(this.value)
 function optionChanged(selection) {
-
     d3.json(url).then(function (data){
         updatePlotly(selection, data);
-//return data?
     });    
 }
 
 d3.json(url).then(function (data){
     init(data);
-
 });
