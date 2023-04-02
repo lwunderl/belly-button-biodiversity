@@ -84,8 +84,8 @@ function init(data) {
         width: 600, 
         height: 450,
         margin: { t: 115, b: 115 },
-        xaxis: {range: [-1, 1]},
-        yaxis: {range: [0, 1]},
+        xaxis: {range: [-1, 1], "showgrid": false, "showticklabels": false},
+        yaxis: {range: [0, 1], "showgrid": false, "showticklabels": false},
         showlegend: false,
         annotations: [
             {
@@ -204,8 +204,8 @@ function updatePlotly(selection, data) {
         width: 600, 
         height: 450,
         margin: { t: 115, b: 115 },
-        xaxis: {range: [-1, 1]},
-        yaxis: {range: [0, 1]},
+        xaxis: {range: [-1, 1], "showgrid": false, "showticklabels": false},
+        yaxis: {range: [0, 1], "showgrid": false, "showticklabels": false},
         showlegend: false,
         annotations: [
             {
