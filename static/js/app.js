@@ -39,8 +39,12 @@ function init(data) {
     let barLayout = {
         title:"Top 10 OTU's",
         yaxis: {
-            type: "category"
-            }
+            type: "category",
+            fixedrange: true
+            },
+        xaxis: {
+            fixedrange: true
+        }
     };
 
     //create trace for bubble graph
@@ -57,6 +61,12 @@ function init(data) {
     //create bubble layout for plotly
     let bubbleLayout = {
         title:"All OTU's",
+        yaxis: {
+            fixedrange: true
+        },
+        xaxis: {
+            fixedrange: true
+        }
     };
 
     //create trace for gauge
@@ -86,8 +96,18 @@ function init(data) {
         width: 600, 
         height: 450,
         margin: { t: 115, b: 115 },
-        xaxis: {range: [-1, 1], "showgrid": false, "showticklabels": false},
-        yaxis: {range: [0, 1], "showgrid": false, "showticklabels": false},
+        xaxis: {
+            range: [-1, 1], 
+            "showgrid": false, 
+            "showticklabels": false,
+            fixedrange: true
+        },
+        yaxis: {
+            range: [0, 1], 
+            "showgrid": false, 
+            "showticklabels": false,
+            fixedrange: true
+        },
         showlegend: false,
         annotations: [
             {
@@ -164,8 +184,12 @@ function updatePlotly(selection, data) {
     let barLayout = {
         title:"Top 10 OTU's",
         yaxis: {
-            type: "category"
-            }
+            type: "category",
+            fixedrange: true
+            },
+        xaxis: {
+            fixedrange: true
+        }
     };
 
     //create trace for bubble graph
@@ -182,6 +206,12 @@ function updatePlotly(selection, data) {
     //create bubble layout for plotly
     let bubbleLayout = {
         title:"All OTU's",
+        yaxis: {
+            fixedrange: true
+        },
+        xaxis: {
+            fixedrange: true
+        }
     };
 
     //create trace for gauge
@@ -211,8 +241,18 @@ function updatePlotly(selection, data) {
         width: 600, 
         height: 450,
         margin: { t: 115, b: 115 },
-        xaxis: {range: [-1, 1], "showgrid": false, "showticklabels": false},
-        yaxis: {range: [0, 1], "showgrid": false, "showticklabels": false},
+        xaxis: {
+            range: [-1, 1], 
+            "showgrid": false, 
+            "showticklabels": false,
+            fixedrange: true
+        },
+        yaxis: {
+            range: [0, 1], 
+            "showgrid": false, 
+            "showticklabels": false,
+            fixedrange: true
+        },
         showlegend: false,
         annotations: [
             {
