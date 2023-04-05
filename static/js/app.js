@@ -103,9 +103,11 @@ function init(data) {
             range: [0, 1], 
             "showgrid": false, 
             "showticklabels": false,
-            fixedrange: true
+            fixedrange: true,
+            automargin: true
         },
         showlegend: false,
+        autosize: true,
         annotations: [
             {
               ax: 0.0,
@@ -239,9 +241,6 @@ function updatePlotly(selection, data) {
     let yPt = r * Math.sin(theta*.0174533)
 
     let gaugeLayout = {
-        width: 600, 
-        height: 450,
-        margin: { t: 115, b: 115 },
         xaxis: {
             range: [-1, 1], 
             "showgrid": false, 
@@ -252,9 +251,11 @@ function updatePlotly(selection, data) {
             range: [0, 1], 
             "showgrid": false, 
             "showticklabels": false,
-            fixedrange: true
+            fixedrange: true,
+            automargin: true
         },
         showlegend: false,
+        autosize: true,
         annotations: [
             {
               ax: 0.0,
