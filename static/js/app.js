@@ -132,6 +132,10 @@ function init(data) {
           ]
     };
 
+    let gaugeConfig = {
+        responsive: true
+    };
+
     //prepare data for demographic panel
     let initDemographicKeys = Object.keys(data.metadata[0]);
     let initDemographicValues = Object.values(data.metadata[0])
@@ -148,7 +152,7 @@ function init(data) {
     //have plotly plot the bar, bubble, and gauge graph
     Plotly.newPlot("bar", barArray, barLayout);
     Plotly.newPlot("bubble", bubbleArray, bubbleLayout);
-    Plotly.newPlot("gauge", gaugeArray, gaugeLayout);
+    Plotly.newPlot("gauge", gaugeArray, gaugeLayout, gaugeConfig);
 
 };
 
@@ -277,6 +281,10 @@ function updatePlotly(selection, data) {
           ]
     };
 
+    let gaugeConfig = {
+        responsive: true
+    };
+
     //prepare data for demographic panel
     let selectDemographicKeys = Object.keys(selectMetaData[0]);
     let selectDemographicValues = Object.values(selectMetaData[0])
@@ -294,7 +302,7 @@ function updatePlotly(selection, data) {
     //have plotly plot the bar graph
     Plotly.newPlot("bar", barArray, barLayout);
     Plotly.newPlot("bubble", bubbleArray, bubbleLayout);
-    Plotly.newPlot("gauge", gaugeArray, gaugeLayout);
+    Plotly.newPlot("gauge", gaugeArray, gaugeLayout, gaugeConfig);
 
 };
 
