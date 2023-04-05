@@ -62,10 +62,12 @@ function init(data) {
     let bubbleLayout = {
         title:"All OTU's",
         yaxis: {
-            fixedrange: true
+            fixedrange: true,
+            rangemode: "nonnegative"
         },
         xaxis: {
-            fixedrange: true
+            fixedrange: true,
+            rangemode: "tozero"
         }
     };
 
@@ -212,10 +214,12 @@ function updatePlotly(selection, data) {
     let bubbleLayout = {
         title:"All OTU's",
         yaxis: {
-            fixedrange: true
+            fixedrange: true,
+            rangemode: "nonnegative"
         },
         xaxis: {
-            fixedrange: true
+            fixedrange: true,
+            rangemode: "tozero"
         }
     };
 
