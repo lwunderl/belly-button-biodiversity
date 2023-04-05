@@ -95,14 +95,16 @@ function init(data) {
     let gaugeLayout = {
         xaxis: {
             range: [-1, 1], 
-            "showgrid": false, 
-            "showticklabels": false,
+            showgrid: false, 
+            showticklabels: false,
+            zeroline: false,
             fixedrange: true
         },
         yaxis: {
             range: [0, 1], 
-            "showgrid": false, 
-            "showticklabels": false,
+            showgrid: false, 
+            showticklabels: false,
+            zeroline: false,
             fixedrange: true,
             automargin: true
         },
@@ -243,14 +245,16 @@ function updatePlotly(selection, data) {
     let gaugeLayout = {
         xaxis: {
             range: [-1, 1], 
-            "showgrid": false, 
-            "showticklabels": false,
+            showgrid: false, 
+            showticklabels: false,
+            zeroline: false,
             fixedrange: true
         },
         yaxis: {
             range: [0, 1], 
-            "showgrid": false, 
-            "showticklabels": false,
+            showgrid: false, 
+            showticklabels: false,
+            zeroline: false,
             fixedrange: true,
             automargin: true
         },
