@@ -93,9 +93,6 @@ function init(data) {
     let yPt = r * Math.sin(theta*.0174533)
 
     let gaugeLayout = {
-        width: 600, 
-        height: 450,
-        margin: { t: 115, b: 115 },
         xaxis: {
             range: [-1, 1], 
             "showgrid": false, 
@@ -132,7 +129,7 @@ function init(data) {
           ]
     };
 
-    let gaugeConfig = {
+    let layoutConfig = {
         responsive: true
     };
 
@@ -150,9 +147,9 @@ function init(data) {
     let gaugeArray = [gauge1];
 
     //have plotly plot the bar, bubble, and gauge graph
-    Plotly.newPlot("bar", barArray, barLayout);
-    Plotly.newPlot("bubble", bubbleArray, bubbleLayout);
-    Plotly.newPlot("gauge", gaugeArray, gaugeLayout, gaugeConfig);
+    Plotly.newPlot("bar", barArray, barLayout, layoutConfig);
+    Plotly.newPlot("bubble", bubbleArray, bubbleLayout, layoutConfig);
+    Plotly.newPlot("gauge", gaugeArray, gaugeLayout, layoutConfig);
 
 };
 
@@ -281,7 +278,7 @@ function updatePlotly(selection, data) {
           ]
     };
 
-    let gaugeConfig = {
+    let layoutConfig = {
         responsive: true
     };
 
@@ -300,9 +297,9 @@ function updatePlotly(selection, data) {
     let gaugeArray = [gauge1];
 
     //have plotly plot the bar graph
-    Plotly.newPlot("bar", barArray, barLayout);
-    Plotly.newPlot("bubble", bubbleArray, bubbleLayout);
-    Plotly.newPlot("gauge", gaugeArray, gaugeLayout, gaugeConfig);
+    Plotly.newPlot("bar", barArray, barLayout, layoutConfig);
+    Plotly.newPlot("bubble", bubbleArray, bubbleLayout, layoutConfig);
+    Plotly.newPlot("gauge", gaugeArray, gaugeLayout, layoutConfig);
 
 };
 
