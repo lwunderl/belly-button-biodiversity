@@ -75,7 +75,7 @@ function init(data) {
     let gauge1 = {
         value: gaugeValue,
         domain: {x: [0,1], y:[0,1]},
-        title: {text: "Belly Button Wash Frequency\nScrubs per Week"},
+        title: {text: "Belly Button Wash Frequency<br>Scrubs per Week"},
         type: "indicator",
         mode: "gauge",
         gauge: {
@@ -227,7 +227,7 @@ function updatePlotly(selection, data) {
     let gauge1 = {
         value: gaugeValue,
         domain: {x: [0,1], y:[0,1]},
-        title: {text: "Belly Button Wash Frequency\nScrubs per Week"},
+        title: {text: "Belly Button Wash Frequency<br>Scrubs per Week"},
         type: "indicator",
         mode: "gauge",
         gauge: {
