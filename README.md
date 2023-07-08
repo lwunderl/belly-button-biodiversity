@@ -6,4 +6,4 @@ The page was created using javascript d3, plotly, and html.
 
 To see the dashboard, go here:
 
-<strong><a href="https://lwunderl.github.io/belly-button-challenge/" target="_blank">Belly Button Biodiversity</a></strong>
+<strong><a href="https://lwunderl.github.io/belly-button-biodiversity" target="_blank">Belly Button Biodiversity</a></strong>
